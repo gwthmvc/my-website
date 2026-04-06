@@ -1,7 +1,7 @@
 
 const supabaseUrl = 'https://zqhgrxdqezgwabbdezvu.supabase.co'
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpxaGdyeGRxZXpnd2FiYmRlenZ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0OTQzMzIsImV4cCI6MjA5MTA3MDMzMn0.6vgig0UgLbeYD99w8bI2fgZOttvpPyrnSWBFvCaiS1E'
-const _supabase = supabase.createClient(supabaseUrl, supabaseKey)
+const supabase = supabase.createClient(supabaseUrl, supabaseKey)
 
 async function getCourses() {
     // This replaces your entire backend! 
@@ -20,8 +20,8 @@ async function getCourses() {
         tableBody.innerHTML += `
             <tr>
                 <td>${course.course_code}</td>
-                <td>${course.course_name}</td>
-                <td>${course.grade}</td>
+                <td>${course.Name}</td>
+                <td>${course.Grade}</td>
             </tr>`;
     });
 }
