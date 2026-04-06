@@ -75,3 +75,38 @@ header h1 {
     background-color: #f1f1f1;
     transition: background-color 0.3s ease;
 }
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.filter-label {
+  font-size: 12px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+#semester-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pill {
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  font-size: 13px;
+  cursor: pointer;
+  background: white;
+  color: #555;
+  transition: all 0.15s;
+}
+.pill:hover { background: #f5f5f5; }
+.pill.active {
+  border-color: #333;
+  color: #111;
+  font-weight: 500;
+}

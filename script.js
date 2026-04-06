@@ -27,35 +27,3 @@ async function getCourses() {
 }
 
 getCourses();
-
-async function getCourses() {
-    const filterValue = document.getElementById('semester-filter').value;
-    const tableBody = document.getElementById('table-body');
-    tableBody.innerHTML = ''; // Clear current rows
-
-    let query = _supabase.from('courses').select('*');
-
-    // Apply filter if a specific semester is chosen
-    if (filterValue !== 'all') {
-        query = query.eq('semester', filterValue);
-    }
-
-    const { data, error } = await query.order('course_code', { ascending: true });
-
-    if (error) return console.error(error);
-
-    // Calculate Average while building the table
-    let totalGrade = 0;
-    
-    data.forEach(course => {
-        totalGrade += course.grade;
-        tableBody.innerHTML += `
-            <tr>
-                <td>${course.course_name}</td>
-                <td>**${course.grade}%**</td>
-            </tr>`;
-    });
-
-    const avg = data.length > 0 ? (totalGrade / data.length).toFixed(2) : 0;
-    document.getElementById('avg-grade').innerText = avg;
-}
