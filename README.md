@@ -18,6 +18,7 @@ A clean, responsive web dashboard for tracking academic progress — built with 
 ---
 
 ## Project Structure
+
 ├── index.html    # Dashboard structure
 ├── style.css     # Styling and layout rules
 └── README.md     # Project documentation
